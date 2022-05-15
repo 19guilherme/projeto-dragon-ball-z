@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/imagens/goku.jpg" type="image/x-icon">
+
+    <title>Projeto Dragon Ball Z</title>
+
+    <link rel="stylesheet" href="src/css/variaveis.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/fontes.css">
+    <link rel="stylesheet" href="src/css/animacoes.css">
+    <link rel="stylesheet" href="src/css/estilos.css">
+    <link rel="stylesheet" href="src/css/responsivo.css">
+
+
+   
+    <!--    Sempre deixar o principal(CSS mais importante)(estilos.css) embaixo, pois o software lê de cima para baixo. 
+            Se ocorrer dele ficar em cima, às demais configurações que estiverem
+        embaixo, não será carregado.
+      -->
+
+    <!--  Sempre deixar o link do JS no final do arquivo HTML(antes do fechamento do "body"), pois, o JS depende das informações do HTML para trabalhar.
+          Tambem, o JS pode pesar muitoo, caso demore, todas informações necessárias já foram carregadas.  -->
+
+</head>
+<body>
+    <main>
+        <header class="cabecalho">
+            <h1 class="titulo">character select</h1>
+        </header>
+        <div class="selecao-de-personagens">
+            <div class="personagem-grande personagem-jogador-1">
+                <img src="src/imagens/goku.png" alt="personagem selecionado jogador 1" id="personagem-jogador-1">
+                <div class="nome">
+                    <h2 id="nome-jogador-1">Goku</h2>
+                </div>
+            </div>
+
+            <ul class="lista-de-personagens">
+                <li class="personagem selecionado" id="goku" data-name="goku">
+                    <span class="tag">1P</span>
+                    <img src="src/imagens/goku.jpg" alt="personagem goku">
+                </li>
+
+                <li class="personagem" id="gohan" data-name="gohan">
+                    <span class="tag">1P</span>
+                    <img src="src/imagens/gohan.jpg" alt="personagem gohan">
+                </li>
+
+                <li class="personagem" id="piccolo" data-name="piccolo">
+                    <span class="tag">1P</span>
+                    <img src="src/imagens/piccolo.jpg" alt="personagem piccolo">
+                </li>
+
+                <li class="personagem" id="trunks-futuro" data-name="trunks futuro">
+                    <span class="tag">1P</span>
+                    <img src="src/imagens/trunks-futuro.jpg" alt="personagem trunks-futuro">
+                </li>
+
+                <li class="personagem" id="kuririn" data-name="kuririn">
+                    <span class="tag">1P</span>
+                    <img src="src/imagens/kuririn.jpg" alt="personagem kuririn">
+                </li>
+
+                <li class="personagem jogador-2-selecionado" id="freeza" data-name="freeza">
+                    <span class="tag">2P</span>
+                    <img src="src/imagens/freeza.jpg" alt="personagem freeza">
+                </li>
+
+                <li class="personagem" id="mestre-kame" data-name="mestre kame">
+                    <span class="tag">1P</span>
+                    <img src="src/imagens/mestre-kame.jpg" alt="personagem mestre-kame">
+                </li>
+
+                <li class="personagem" id="vegeta" data-name="vegeta">
+                    <span class="tag">1P</span>
+                    <img src="src/imagens/vegeta.jpg" alt="personagem vegeta">
+                </li>
+
+                <li class="personagem" id="android-17" data-name="android 17">
+                    <span class="tag">1P</span>
+                    <img src="src/imagens/android-17.jpg" alt="personagem android-17">
+                </li>
+
+            </ul>
+
+            <div class="personagem-grande personagem-jogador-2">
+                <img src="src/imagens/freeza.png" alt="personagem selecionado jogador 2" id="personagem-jogador-2">
+                <div class="nome">
+                    <h2>Freezan</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./src/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'ssf4'; /* Nome de fonte editável */
+  src: url('../fontes/SSF4_ABUKET.woff'); 
+}
+/* Criação de comentario  */
+/* Utilização de fontes baixadas, caso contrário(fontes externa), usar link da font no "head". */
+
+@font-face {
+  font-family: 'command';
+  src: url('../fontes/PILOT_COMMAND.otf');
+}
+
+/* URL - Utilizado para chamar ou buscar arquivos. */

@@ -1,0 +1,186 @@
+body{
+    font-family: 'ssf4', Courier, monospace;
+    background: rgb(8, 47, 108);
+}
+
+
+/* ::before - Pseudo elemtento do CSS
+     Podemos tambem existe o ::after(após).*/
+/* Antes do body */ 
+/* Quando usar ::before/::after 
+    usar sempre o content:'' */
+body::before{
+    content: '';
+    background-image: url(../imagens/gif.png);
+    /* URL - Utilizado para chamar ou buscar arquivos. */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* background ocupará 100% da tela. */
+    position: absolute;     /* ESTUDAR SOBRE O ASSUNTO - POSITION */
+    width: 100%;    /* Largura */
+    height: 100%;   /* Altura */
+    opacity: 0.2;
+}
+
+main{
+    min-height: 100vh;   
+    /* Altura miníma*/ /*vh-viewport - irá ocupar no minímo 100% da tela*/
+    display: flex;
+    flex-direction: column;    /* column - trabalha em coluna */ /* ESTUDAR SOBRE O ASSSUNTO */
+    justify-content: center;
+}
+
+.cabecalho{
+    z-index: 1;     /* DETERMINA A CAMADA- O MENOR NÚMERO, MAIS ENCIMA FICARÁ  */
+    display: flex;
+    justify-content: center;
+}
+
+.cabecalho .titulo{
+    color: var(--cor-titulo-forte);
+    text-transform: uppercase;  /* Deixa todas as letras "MAIUSCULA" */
+    font-size: 52px;
+    letter-spacing: 3px;
+    line-height: 102px;     /* ????????*/
+    -webkit-text-stroke: 1px rgb(206, 202, 202);
+      /* ???????? */
+}
+
+.selecao-de-personagens{
+    display: flex;
+    align-items: center;    /* Alinhamento VERTICAL NO CENTRO */
+    justify-content: center;    /* Alinhamento HORIZONTAL NO CENTRO */
+}
+
+.selecao-de-personagens .personagem-grande{
+    text-align: center;
+    width: 30%;
+    height: 70vh;
+    position: relative;  /* Position ativado, ganha o "z-index" padrão, fazendo que, os personagem venham para frente. */
+
+    /* Position PAI */
+}
+
+.selecao-de-personagens .personagem-grande
+img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Formas de centralizar horizontal/vertical */ 
+    /*   ??????????   */
+}
+
+
+/* Quando usar ::before/::after 
+    usar sempre o content:'' */
+.selecao-de-personagens .personagem-grande .nome::before{
+    content: '';
+    height: 25px;
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    /* POSITION FILHO */
+    /* POSIÇÃO DO PLANO DE FUNDO */
+}
+
+.selecao-de-personagens .personagem-grande .nome 
+h2{
+    color: var(--cor-padrao);
+    font-family: 'command', sans-serif;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 30px;
+    
+/* NOME PERSONAGEM */
+/* POSITION FILHO */
+}
+
+.selecao-de-personagens .personagem-grande.personagem-jogador-1 .nome::before{
+    background-color: rgb(11, 4, 213);
+    /* PLANO DE FUNDO DO NOME DOS PERSONAGENS */
+}
+
+.selecao-de-personagens .personagem-grande.personagem-jogador-2 .nome::before{
+    background-color:var(--cor-titulo-forte);
+    /* PLANO DE FUNDO DO NOME DOS PERSONAGENS */
+}
+
+.selecao-de-personagens .lista-de-personagens{
+    display: flex;
+    flex-wrap: wrap; 
+    /* Quando a tela for pequena, quebrará e ficará um debaixo do outro. */
+    max-width: 600px;
+    justify-content: center;
+    gap: 12px; /* Espaçamento dos itens da lista */ 
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem{
+    border: 2px solid var(--cor-padrao);
+    background-color: var(--cor-padrao);
+    width: 30%; /* Largura dos intens da lista */
+    height: 160px;
+    cursor: pointer; /* Ao passar do mouse, a seta mudará e se trasnforma em maozinha clicavel. */
+    z-index: 2; /* DETERMINA A CAMADA- O MENOR NÚMERO, MAIS ENCIMA FICARÁ  */
+    border-radius: 5px;
+    position: relative;
+    transition: 0.15s ease-in-out;  /* Efeito tipo zoom, ao passar do mouse */
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem
+img{
+    width: 100%;    /* Ocupando 100% da largura do PAI */
+    height: 100%;   /* Ocupando 100% da altura do PAI */
+    border-radius: 5px;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.selecionado{
+    border: 2px solid var(--cor-azul-media);
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+/* :hover - Pseudo elemento, ao passar do mouse */
+.selecao-de-personagens .lista-de-personagens .personagem:hover{
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.jogador-2-selecionado{
+    border: 2px solid var(--cor-vermelha-fraca);
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+/* :hover - Pseudo elemento, ao passar do mouse */
+.selecao-de-personagens .lista-de-personagens .personagem.jogador-2-selecionado:hover{
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem .tag{
+    display: none;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute; /* A letra fica pra dentro da imagem PAI / FILHO */
+    top: 7px;
+    left: 7px;
+    color: var(--cor-azul-media);
+    transition: opacity .3s ease-in-ou;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-duration: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.personagem.selecionado .tag{
+    display: block;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.jogador-2-selecionado .tag{
+    display: block;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
